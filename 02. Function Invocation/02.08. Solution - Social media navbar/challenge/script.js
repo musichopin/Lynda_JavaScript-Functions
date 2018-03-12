@@ -5,8 +5,9 @@ var socialMedia = {
     flickr: 'http://flickr.com/planetotheweb',
     youtube: 'http://youtube.com/planetoftheweb'
   },
-  mediaMaker(media) {
+  mediaMaker() {
     var output = '<ul>', 
+// querySelect() denseydi nodelist yerine tek node seçmiş olup aşağıda looplayamazdık
       myList = document.querySelectorAll('.socialmediaicons');
       // provides flexibility to use one class name for social media container
 
@@ -19,6 +20,7 @@ var socialMedia = {
     
     for (var i = myList.length - 1; i >= 0; i--) { // specifies where to place ul
       myList[i].innerHTML = output;
+// alt: myList[i].outerHTML = '<nav class="socialmediaicons">' + output + '</nav>';
     };
   }
 };
