@@ -41,3 +41,15 @@ firstDog.speaker('woof');
 /*
 speak.bind(firstDog)("hauv")
 */
+
+/* vers2: for in sta with arrays doesnt guarantee order and iterates 
+// inherited props unless with eliminate with hasOwnProperty():
+Array.prototype.foo = "foo!";
+var b = ['a', 'b', 'c'];
+var c = ['1', '2', '3'];
+
+for (var i in c) {
+	if (c.hasOwnProperty(i)) {
+		alert(c[i]);
+	}
+}*/
