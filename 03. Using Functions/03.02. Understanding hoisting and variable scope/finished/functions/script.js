@@ -6,6 +6,19 @@ function myDog() { // function declaration
 	var dogName = "terry"
 }
 
-myDog() // we cud call function declarations before we create them 
-//(but not the case for function expressions)
+myDog() // we cannot call function expressions before we create them 
+//(but not the case for function declarations)
 
+// // ex: scope for conditionals/loop is different than function
+// var x = 10; // x declare edilmese bile hata vermezdi
+// var y = 12;
+// if(true) {
+// 	var x = 5;
+// }
+
+// function a() {
+// 	var y = 6;
+// }
+
+// console.log(x) // 5
+// console.log(y) // 12
