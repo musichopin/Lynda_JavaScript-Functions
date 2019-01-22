@@ -6,7 +6,15 @@ var speak = function(what) {
 }
 
 var saySomething = {normal: "meow", love: "purr"}
+
 speak.apply(saySomething, [saySomething.normal]);
 speak.call(saySomething, saySomething.normal);
 speak.bind(saySomething, saySomething.normal)();
-//speak.bind(null, saySomething.normal)(); // speak() points to window object
+//vers1: 
+//saySomething.normal = "hauv";
+//var speaker = speak.bind(saySomething, saySomething.normal)
+//speaker()
+//vers2: speak.bind(null, saySomething.normal)();//speak() points 2 window obj
+//ex1: 
+//saySomething.func = speak;
+//saySomething.func(saySomething.normal);

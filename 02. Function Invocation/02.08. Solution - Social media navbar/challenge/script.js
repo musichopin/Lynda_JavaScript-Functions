@@ -13,17 +13,17 @@
       // provides flexibility to use one class name for social media container
 
       for (var key in this.types) {//loops object; specifies what to place in myList
-        if(this.types.hasOwnProperty(key)) { // eliminates inherited props
+        if(this.types.hasOwnProperty(key)) {//eliminates inherited props. needless?
           output += '<li><a href="' + this.types[key] + '">' +// " for html, ' for js
-            '<img src="images/' + key + '.png" alt="icon for '+key+'">' +
+            '<img src="images/' + key + '.png" alt="icon for' + key + '">' +
           '</a></li>'; // img names in harmony with keys
         }
       }
       output+= '</ul>';
       
-      for (var i = myList.length - 1; i >= 0; i--) { // specifies where to place ul
+      for (var i = myList.length - 1; i >= 0; i--) {//specifies where 2 place myList
         myList[i].innerHTML = output;
-  // alt: myList[i].outerHTML = '<nav class="socialmediaicons">' + output + '</nav>';
+//alt: myList[i].outerHTML = '<nav class="socialmediaicons">' + output + '</nav>';
       };
     }
   };
@@ -61,15 +61,21 @@
 */
 
 
-/*
-alt2:
 
-var socialList = function() {
+/* alt2: basic version
+var types = {
+      facebook : 'http://facebook.com/viewsource',
+      twitter: 'http://twitter.com/planetoftheweb',
+      flickr: 'http://flickr.com/planetotheweb',
+      youtube: 'http://youtube.com/planetoftheweb'
+}      
+
+var mediaMaker = function(types) {
   var  output = '<ul>', 
     myList = document.querySelectorAll('.socialmediaicons');
 
-  for (var key in arguments[0]) {
-    output+= '<li><a href="' + socialMedia[key] + '">' +
+  for (var key in types) { // alt: var key in arguments[0]
+    output+= '<li><a href="' + types[key] + '">' +
       '<img src="images/' + key + '.png" alt="icon for '+key+'">' +
     '</a></li>';
   }
@@ -80,5 +86,5 @@ var socialList = function() {
   };
 };
 
-socialList(socialMedia);
+mediaMaker(types);
 */

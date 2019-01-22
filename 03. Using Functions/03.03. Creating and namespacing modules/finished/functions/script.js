@@ -2,34 +2,38 @@ var ray = (function() {
   return {
     speak: function() {
       console.log('hello');
-    }
+    } // no semicolon
   };
 })();
 
-/*
-vers-1: caller: ray();
 
+
+/* ex1: 
 var ray = (function() {
   return (
-  	function() {
-  		console.log("hello")
-  	}
+    function() {
+      console.log("hello")
+    } // no semicolon
   )
 })();
+
+ray();
 */
 
-/*
-vers0: caller: console.log(ray)
 
+/* ex2: 
 var ray = (function() {
   return (
-  	"hello";
+    "hello";
   )
 })();
+
+console.log(ray)
 */
 
-/*
-vers1: caller: ray.speak();
+/* ex3: 
+
+ray.speak();
 
 var ray = {
     speak: function() {
@@ -38,9 +42,7 @@ var ray = {
 };
 */
 
-/*
-vers2:
-
+/* ex4:
 (function() {
 	function speak() {
 		console.log('hello');
@@ -49,9 +51,7 @@ vers2:
 })();
 */
 
-/*
-vers3: caller: ray().speak();
-
+/* ex5:
 var ray = function() {
   return {
     speak: function() {
@@ -59,4 +59,15 @@ var ray = function() {
     }
   };
 };
+
+ray().speak();
+*/
+
+
+/*ex6:
+(function() {
+  return ( // no need to write return sta
+      console.log('hello')
+  );
+})();
 */

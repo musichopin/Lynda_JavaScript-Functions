@@ -8,4 +8,4 @@ firstDog.breed = "Doberman";
 
 secondDog = new Dog;
 secondDog.name = "Fluffy";
-secondDog.breed = "Poodle"
+secondDog.breed = "Poodle";

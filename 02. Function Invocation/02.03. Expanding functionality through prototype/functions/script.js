@@ -1,14 +1,14 @@
-var speak = function(saywhat) { // lower case
+var speak = function(saywhat) { // lower case (func)
+	this.x = "within func";
   console.log(saywhat);
+  console.log(this.x);
   console.log(this.name);
   console.log(this.nom);
 }
 
 var no = 5;
 
-var Dog = function() { // upper case
-  // function called(){console.log(name)} 	// local func + undefined name var
-  // this.called = function (){console.log(this.name)}	// right
+var Dog = function() { // upper case (obj constructor)
 }
 
 var Cat = function() { // upper case
@@ -29,20 +29,25 @@ firstCat = new Cat;
 firstCat.name = "Sniggles";
 firstCat.speaker('meow');
 
-/* vers1: without prototype
+/* ex1: without prototype (less common)
 firstDog = new Dog;
-
 firstDog.speaker = speak;
-
+firstDog.nom = no;
 firstDog.name = "Rover";
 firstDog.speaker('woof');
 */
 
-/*
+
+/* ex2: using bind()
+Dog.prototype.nom = no; // alt: firstDog.nom = no;
+firstDog = new Dog;
+firstDog.name = "Rover";
 speak.bind(firstDog)("hauv")
+// alt: speak.bind(firstDog, "hauv")()
 */
 
-/* vers2: for in sta with arrays doesnt guarantee order and iterates 
+
+/* ex3: for in sta with arrays doesnt guarantee order and iterates 
 // inherited props unless with eliminate with hasOwnProperty():
 Array.prototype.foo = "foo!";
 var b = ['a', 'b', 'c'];

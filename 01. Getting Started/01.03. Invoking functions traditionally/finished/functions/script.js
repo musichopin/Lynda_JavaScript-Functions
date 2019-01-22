@@ -8,6 +8,8 @@ function plus(a,b) {
   );
 }
 
-plus(2,2) // this kw refers to global window object and plus() becomes function
+plus(2,2) 
+// this kw refers to global window object and plus() becomes function
 
-new plus(2,2) // this kw refers to local plus object and plus() becomes obj constructor
+new plus(2,2) 
+// this kw refers to local plus object and plus() becomes obj constructor
